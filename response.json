@@ -1,0 +1,22 @@
+{
+  "message": {
+    "header": {
+      "status_code": 
+      "execute_time": 
+    },
+    "body": {
+      "lyrics": {
+        "lyrics_id": 
+        "restricted": 
+        "instrumental": 
+        "lyrics_body": 
+        "lyrics_language":
+        "script_tracking_url": 
+        "pixel_tracking_url": 
+        "html_tracking_url": 
+        "lyrics_copyright": 
+        "updated_time": 
+      }
+    }
+  }
+}       

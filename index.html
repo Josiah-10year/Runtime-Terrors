@@ -8,35 +8,130 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="style.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		
   </head>
   <body>
+    <nav>
+      <div class="blue nav-wrapper">
+        <a href="#!" class="brand-logo">Sing Along</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a class="active" href="#about">About Us</a></li>
+          <li><a class="active" href="#search">Search</a></li>
+          <li><a class="active" href="#contact" >Contact Us</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <nav>
-    <div class="blue nav-wrapper">
-      <a href="#!" class="brand-logo">Materialze App</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="active" href="index.html">Home</a></li>
-      </ul>
-    </div>
-  </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a class="active" href="#about">About Us</a></li>
+      <li><a class="active" href="#search">search</a></li>
+      <li><a class="active" href="#contact" >Contact Us</a></li>
+    </ul>
+    
+    <section id="home">
+      <main>
+        <h2> Lyrics search has never been easier</h2>
+        <div id="search">
+          <button id ="searchButton" onclick="startSearch()">Begin Searching</button> 
+          <input type="textbox"></input>
+          <article id="searchResult">
+            
+          </article>
+        </div>
+        <section class-"aboutus" - td - "About">
+</section>
+<section class-"searchSection" id - "search">
+    <div class-"urapper">
+    <form action-"" class-"searchBar">
+         <label for-">
+             <h3>Search Lyric</h3>
+         </label>
+         <div>
+         </div>
+         <div class-"barContainer">
+             <input type-"search" name-"" id-""
+             placeholder-"Enter a song name or artist name">
+             <l-- <button
+                          type-"submit">S</button> --> I
+             <button>
+                 <ing src-"./search-normal.svg"
+                 alt-"">
+             </button>
+         </div>
+      </form>
+      </div>
+  </section>
+   <section class-"contactUs"
+                            id-"contact"> ---
+   </section>
+        <article  id="lyrics" >
+    
+        </article>
+      </main>
+    </section>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a class="active" href="index.html">Home</a></li>
-  </ul>
 
-    <main>
-      <h1>My App</h1>
-    </main>
+    <section id="about">
+      <article>
+        <h4>Why should you use Sing Along?</h4>
+        <p>It is an easy way to find lyrics to your favorite songs!!</p>
+        <p>It's user friendly!!</p>
+      </article>
+      <article>
+        <h3>$0.00</h3><p>/for a lifetime</p>
+      </article>
+      <article>
+        <h4>How much do you need to use Sing Along?</h4>
+        <p>Sing Along is absolutely FREE!</p>
+      </article>
+    </section>
+    
 
-    <script>
+    <section id="contact">
+      <div>
+        <form> 
+          <h4>Contact Us</h4>
+          <div class="row">
+            <div class="input-field col s8">
+              <p for="name">Name</p>
+              <input name="name" type="textbox" minlength="8" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s8">
+              <p for="email">Email</p>
+              <input name="email" type="emailbox" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <p for="message">Message</p>
+              <input name="message" type="textbox" minlength="8" required>
+            </div>
+          </div>
+          <div>
+            <input type="button" onclick = "contact()" value ="submit" />
+          </div>
+        </form>
+      </div>
+    </section>
+        
+  </body>
+  <footer>
+    <p>by Runtime Terrors 100+ 1000+</p>
+    <p></p>
+  </footer>
+  <script>
       //Initialize Materialize components here
-      document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
 
-        const navs = M.Sidenav.init(document.querySelectorAll('.sidenav'));
+    const navs = M.Sidenav.init(document.querySelectorAll('.sidenav'));
 
       });
     </script>
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+<!--   <script src= "https://api.musixmatch.com/ws/1.1/5b3164d230f2b1144448dd155d22c069"</script> -->
 </html>
