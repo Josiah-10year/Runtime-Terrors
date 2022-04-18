@@ -1,172 +1,130 @@
+// set our variables
+var time, alarm, currentH, currentM,
+    activeAlarm = false,
+    sound = new Audio("placeful-song-loop.wav");
 
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-musixmatch-Host': 'https://api.musixmatch.com/ws/1.1/',
-// 		'X-musixmatch-Key': '98f31d9a8fef72644d813a626aeaf1db'
-// 	}
-// };
+/*
+  audio sound source: https://freesound.org/people/SieuAmThanh/sounds/397787/
+*/
 
-// fetch('https://api.musixmatch.com/ws/1.1/', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-// const form = document.getElementById("contactForm")
-// const search = document.getElementById("search")
-
-// const apiURL = "https://api.musixmatch.com/ws/1.1/";
-// var apikey = "98f31d9a8fef72644d813a626aeaf1db";
-
-// async function getMySearch(){
-//   document.querySelector("#search");
-//   try{
-//       let response = await fetch(apiURL);
-//       let data = await response.json();
-//       displayMySearch(data);
-//     }catch(e){
-//         console.log(e);
-//     }
-// }
-// getMySearch("${apiURL}${q_track}/${q_artist}/${apikey}")
-
-// function displayMySearch(data){
-//   console.log(data)
-//   let result = document.querySelector("#searchResult");
-//   let html= '';
-//   html+=`
-//     <h5>${q_track} - ${q_artist}</h5>      
-//   `;
-
-//   result.innerHTML = html; 
-// }
+// loop alarm    
+sound.loop = true;
+//GET complement api : https://complimentr.com/api
+  async function randomQuote() {
+    const response = await fetch(`https://api.quotable.io/random`)
+   const data = await response.json()
+   console.log(data.content,data.author)
   
-// async function getLyrics(url){
-//   try{
-//     let response = await fetch(url);
-//     let data = await response.json();
-//     displayLyrics(data);
-//   }catch(e){
-//     console.log(e);
-//   } 
-// }
-// getLyrics("${urlAPI}matcher.lyrics.get/${q_track}/${q_artist}/${apikey}")
+  }
+randomQuote()
 
-// function displayLyrics(){
-//   let result = document.querySelector("#lyrics");
-//   let html= '';
-//   html+=`
-//     <h5>${q_track} - ${q_artist}</h5>
-//     <p>${lyrics_body}</p>        
-//   `;
-//   result.innerHTML = html;
-// }
-
-// function contact(submit){
-//   submit.preventDefault();
-
-//   const contactForm = submit.target;
-//   const formData = new FormData(form);
-//   const data = Object.fromEntries(formData);
-  
-//   console.log(data);
-// }
-
-//document.forms['contactForm'].addEventListener('submit', contact);
-
-
-const from = document.getElementById("form");
-const search = document.getElementById("search");
-const result = document.getElementById("result");
-const more = document.getElementById("more");
-
-const apiURL = "https://api.musixmatch.com/ws/1.1/";
-
-async function searchSongs(term) {
-  const res = await fetch(`${apiURL}/suggest/${term}`);
-  const data = await res.json();
-
-  showData(data);
+//////to change
+function ShowQuote(data){
+  let result = document.querySelector('#quoteSpace');
+  let html ='';
+  html+=`<div id="#quoteSpace">
+          <h3>${data.content}</h3>
+          <h6>${data.author}</h6>
+          </div>`;
+  resutlt.innerHTML=html;
 }
 
-function showData(data) {
-  console.log(data);
-  result.innerHTML = `
-  <ul class="songs">
-    ${data.data
-      .map(
-        (song) => `<li>
-    <span><strong>${song.artist.name}</strong> - ${song.title}</span>
-    <button class="btn" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics</button>
-  </li>`
-      )
-      .join("")}
-  </ul>
- `;
-  if (data.prev || data.next) {
-    more.innerHTML = `
-      ${
-        data.prev
-          ? `<button class="btn" onclick="getMoreSongs('${data.prev}')">Prev</button>`
-          : ""
-      }
-      ${
-        data.next
-          ? `<button class="btn" onclick="getMoreSongs('${data.next}')">Next</button>`
-          : ""
-      }
-    `;
-  } else {
-    more.innerHTML = "";
+// define a function to display the current time
+function displayTime() {
+  var now = new Date();
+  time = now.toLocaleTimeString();
+  clock.textContent = time;
+  // time = "1:00:00 AM";
+  // watch for alarm
+  if (time === alarm) {
+    sound.play();
+    
+    // show snooze button
+    snooze.className = "";
+  }
+  setTimeout(displayTime, 1000);
+}
+displayTime();
+
+// add option values relative towards time
+function addMinSecVals(id) {
+  var select = id;
+  var min = 59;
+  
+  for (i = 0; i <= min; i++) {
+    // defined as new Option(text, value)
+    select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i < 10 ? "0" + i : i);
   }
 }
-
-async function getMoreSongs(url) {
-  const res = await fetch(`https://cors-anywhere.herokuapp.com/${url}`);
-  const data = await res.json();
-
-  showData(data);
-}
-
-async function getLyrics(artist, songTitle) {
-  const res = await fetch(`${apiURL}/v1/${artist}/${songTitle}`);
-  const data = await res.json();
-
-  if (data.error) {
-    result.innerHTML = data.error;
-  } else {
-    const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, "<br>");
-
-    result.innerHTML = `
-              <h2><strong>${artist}</strong> - ${songTitle}</h2>
-              <span>${lyrics}</span>
-          `;
+function addHours(id) {
+  var select = id;
+  var hour = 12;
+  
+  for (i = 1; i <= hour; i++) {
+    // defined as new Option(text, value)
+    select.options[select.options.length] = new Option(i < 10 ? "0" + i : i, i);
   }
-
-  more.innerHTML = "";
 }
+addMinSecVals(minutes);
+addMinSecVals(seconds);
+addHours(hours);
 
-// form.addEventListener("submit", (e) => {
-//   e.preventDefault();
+// set and clear alarm
+startstop.onclick = function() {
+  // set the alarm
+  if (activeAlarm === false) {
+    hours.disabled = true;
+    minutes.disabled = true;
+    seconds.disabled = true;
+    ampm.disabled = true;
+    
+    alarm = hours.value + ":" + minutes.value + ":" + seconds.value + " " + ampm.value;
+    this.textContent = "Clear Alarm";
+    activeAlarm = true;
+  } else {
+    // clear the alarm
+    hours.disabled = false;
+    minutes.disabled = false;
+    seconds.disabled = false;
+    ampm.disabled = false;
+    
+    sound.pause();
+    alarm = "00:00:00 AM";
+    this.textContent = "Set Alarm";
+    
+    // hide snooze button
+    snooze.className = "hide";
+    activeAlarm = false;
+  }
+};
 
-//   const searchTerm = search.value.trim();
-
-//   if (!searchTerm) {
-//     alert("Please type in a search term");
-//   } else {
-//     searchSongs(searchTerm);
-//   }
-// });
-
-// Get lyrics button click
-// result.addEventListener("click", (e) => {
-//   const clickedEl = e.target;
-
-//   if (clickedEl.tagName === "BUTTON") {
-//     const artist = clickedEl.getAttribute("data-artist");
-//     const songTitle = clickedEl.getAttribute("data-songtitle");
-
-//     getLyrics(artist, songTitle);
-//   }
-// });
 
 
+// snooze for 5 minutes
+snooze.onclick = function() {
+  if (activeAlarm === true) {
+    // grab the current hour and minute
+    currentH = time.substr(0, time.length - 9);
+    currentM = time.substr(currentH.length + 1, time.length - 8);
+    
+    if (currentM >= "55") {
+      minutes.value = "00";
+      hours.value = parseInt(currentH) + 1;
+    } else {
+      if (parseInt(currentM) + 5 <= 9) {
+        minutes.value = "0" + parseInt(currentM + 5);
+      } else {
+        minutes.value = parseInt(currentM) + 5;
+      }
+    }
+    
+    // hide snooze button
+    snooze.className = "hide";
+    
+    // now reset alarm
+    startstop.click();
+    startstop.click();
+  } else {
+    return false;
+  }
+};

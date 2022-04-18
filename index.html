@@ -1,137 +1,161 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		
-  </head>
-  <body>
-    <nav>
-      <div class="blue nav-wrapper">
-        <a href="#!" class="brand-logo">Sing Along</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a class="active" href="#home">Home</a></li>
-          <li><a class="active" href="#about">About Us</a></li>
-          <li><a class="active" href="#search">Search</a></li>
-          <li><a class="active" href="#contact" >Contact Us</a></li>
-        </ul>
-      </div>
-    </nav>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Nice Alarm</title>
+    <link rel="stylesheet" href="main.css">
+	 <link href="style.css" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+	
+</head>
 
-    <ul class="sidenav" id="mobile-demo">
-      <li><a class="active" href="#home">Home</a></li>
-      <li><a class="active" href="#about">About Us</a></li>
-      <li><a class="active" href="#search">search</a></li>
-      <li><a class="active" href="#contact" >Contact Us</a></li>
-    </ul>
+<style>
+
+ </style>
+
+<body>
+    <header id="navigation">
+        <div class="wrapper">
+            <nav>
+                <a class="siteLogo" href="#home">Nice Alarm</a>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#search">Search</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+  </a>
+</div>
+         </nav>       
+        </div>
+    </header>
+
+
+    <main id="home">
+        <div class="wrapper">
+            <div class="landingText">
+        
+  <div class="table">
+  <div class="cell">
+    <h1 id="clock" class="clock"></h1>
     
-    <section id="home">
-      <main>
-        <h2> Lyrics search has never been easier</h2>
-        <div id="search">
-          <button id ="searchButton" onclick="startSearch()">Begin Searching</button> 
-          <input type="textbox"></input>
-          <article id="searchResult">
+    <select id="hours"></select>
+    <select id="minutes"></select>
+    <select id="seconds"></select>
+    <select id="ampm">
+      <option value="AM">AM</option>
+      <option value="PM">PM</option>
+    </select>
+    <p>
+      <button id="snooze" class="hide cta cta1">Snooze</button>
+      <button id="startstop" class="cta cta2">Set Alarm</button>
+		</p>
+  </div>
+	</div>             
+   </div>
+
+            <div class="stats">
+                <div id="#quoteSpace" class=" stat stat1">
+                    <p  style="font-size:30px">"Quote" 
+											-author-</p>
+                </div>
+            </div>
+        </div>
+        <video src="./bgvid2.mp4" muted loop autoplay playsinline></video>
+        <div class="overlay"></div>
+    </main>
+
+    <section class="aboutUs" id = "about">
+        <div class="wrapper">
+
+            <article class="purpose">
+                <div class="left">
+                    <h1 class="infoHeadings">The Nice Alarm</h1>
+										
+                    <p>Always start and finish well with THE NICE ALARM. The nice alarm  gives you that boost you need to start your day. Every time to decide to start your day you words or wisdom. Now isn't that wonderful!</p>
+									<a> <img	src=study.jpg width=100% height=auto></a>
+                </div>
+								<br><p>THE NICE ALAM is your best study pal. As you complete each task let The Nice Alarm tell you how spectacular you are.</p>
+						
+						
+                <div class="right">
+                    <img class="shadow" src="./karaoke.jpg" alt="">
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <section class="searchSection" id = "search">
+        <div class="wrapper">
+
+        
+        <form action="" class="searchBar ">
+            <label for="">
+                <h3>Search Lyric</h3>
+            </label>
+            <div class="barContainer">
+                
+                <input type="search" name="" id="" placeholder="Enter a song name or artist name" class="shadow">
+                <!-- <button type="submit">S</button> -->
+                <button>
+                    <img src="./search-normal.svg" alt="">                    
+                </button>
+            </div>
+
+        </form>
+      <article id="searchResult">
+        
             
           </article>
         </div>
-        <section class-"aboutus" - td - "About">
-</section>
-<section class-"searchSection" id - "search">
-    <div class-"urapper">
-    <form action-"" class-"searchBar">
-         <label for-">
-             <h3>Search Lyric</h3>
-         </label>
-         <div>
-         </div>
-         <div class-"barContainer">
-             <input type-"search" name-"" id-""
-             placeholder-"Enter a song name or artist name">
-             <l-- <button
-                          type-"submit">S</button> --> I
-             <button>
-                 <ing src-"./search-normal.svg"
-                 alt-"">
-             </button>
-         </div>
-      </form>
-      </div>
-  </section>
-   <section class-"contactUs"
-                            id-"contact"> ---
-   </section>
-        <article  id="lyrics" >
-    
-        </article>
-      </main>
+    </section>
+
+    <section class="contactUs" id="contact">
+        <div class="wrapper">
+            <h1>Contact Us</h1>
+            <p>Do you have any questions or feedback?</p>
+            <p>Pleade let us know.</p>
+
+            <form action="https://formsubmit.co/0952d16452e8d2695b99f23adf6f87ad" method="POST" class="contactForm shadow">
+                <label for="">Name</label>
+                <input type="text" name="" id="">
+
+                <label for="">E-mail</label>
+                <input type="email" name="" id="">
+
+                <label for="">Message</label>
+                <textarea name="" id="" cols="30" rows="10" ></textarea>
+
+                <button class="shadow" type="submit">Submit</button>
+            </form>
+        </div>
+
     </section>
 
 
-    <section id="about">
-      <article>
-        <h4>Why should you use Sing Along?</h4>
-        <p>It is an easy way to find lyrics to your favorite songs!!</p>
-        <p>It's user friendly!!</p>
-      </article>
-      <article>
-        <h3>$0.00</h3><p>/for a lifetime</p>
-      </article>
-      <article>
-        <h4>How much do you need to use Sing Along?</h4>
-        <p>Sing Along is absolutely FREE!</p>
-      </article>
-    </section>
-    
+    <footer>
+        <div class="wrapper">
+            <a href="#home" class="footerLogo">Sing Along</a>
 
-    <section id="contact">
-      <div>
-        <form> 
-          <h4>Contact Us</h4>
-          <div class="row">
-            <div class="input-field col s8">
-              <p for="name">Name</p>
-              <input name="name" type="textbox" minlength="8" required>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s8">
-              <p for="email">Email</p>
-              <input name="email" type="emailbox" required>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <p for="message">Message</p>
-              <input name="message" type="textbox" minlength="8" required>
-            </div>
-          </div>
-          <div>
-            <input type="button" onclick = "contact()" value ="submit" />
-          </div>
-        </form>
-      </div>
-    </section>
-        
-  </body>
-  <footer>
-    <p>by Runtime Terrors 100+ 1000+</p>
-    <p></p>
-  </footer>
-  <script>
-      //Initialize Materialize components here
-    document.addEventListener('DOMContentLoaded', function() {
+            <ul class="footerMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+				<div> <a style="color: white;"> <img  src=RTwhite.png width="30" style="vertical-align:middle;"> site by ©RuntimeTerrors </a>
+				</div></div>
+    </footer>
 
-    const navs = M.Sidenav.init(document.querySelectorAll('.sidenav'));
 
-      });
-    </script>
-  <script src="script.js"></script>
-<!--   <script src= "https://api.musixmatch.com/ws/1.1/5b3164d230f2b1144448dd155d22c069"</script> -->
+</body>
+<script src="script.js"></script>
+</html>
+
 </html>
