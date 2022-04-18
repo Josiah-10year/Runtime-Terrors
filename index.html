@@ -4,114 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Nice Alarm</title>
-    <link rel="stylesheet" href="main.css">
-	 <link href="style.css" rel="stylesheet" type="text/css" />
-	<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
-	
+    <title>The WISEALARM</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
 </head>
-
-<style>
-
- </style>
-
 <body>
+
+    <div class="mobileMenu">
+        <div class="wrapper">
+            <div class="exitBtn">
+                <div>&times</div>
+                <!-- <div></div> -->
+            </div>
+            <ul>
+                <li><a class="mobilenavLinks" href="#home">Home</a></li>
+                <li><a class="mobilenavLinks" href="#about">About Us</a></li>
+                <li><a class="mobilenavLinks" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+
+
     <header id="navigation">
         <div class="wrapper">
             <nav>
-                <a class="siteLogo" href="#home">Nice Alarm</a>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#search">Search</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <a class="siteLogo" href="#home">WiseAlarm</a>
+
+                <ul class="menu">
+                    <li><a class="navLinks" href="#home">Home</a></li>
+                    <li><a class="navLinks" href="#about">About Us</a></li>
+                    <li><a class="navLinks" href="#contact">Contact</a></li>
                 </ul>
-  </a>
-</div>
-         </nav>       
+
+                <div class="burgerMenu">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+            </nav>    
         </div>
     </header>
 
-
     <main id="home">
         <div class="wrapper">
-            <div class="landingText">
-        
-  <div class="table">
-  <div class="cell">
-    <h1 id="clock" class="clock"></h1>
-    
-    <select id="hours"></select>
-    <select id="minutes"></select>
-    <select id="seconds"></select>
-    <select id="ampm">
-      <option value="AM">AM</option>
-      <option value="PM">PM</option>
-    </select>
-    <p>
-      <button id="snooze" class="hide cta cta1">Snooze</button>
-      <button id="startstop" class="cta cta2">Set Alarm</button>
-		</p>
-  </div>
-	</div>             
-   </div>
-
-            <div class="stats">
-                <div id="#quoteSpace" class=" stat stat1">
-                    <p  style="font-size:30px">"Quote" 
-											-author-</p>
+            <div class="clockCard">
+                <h1 id="clock"></h1>
+                <div class="selectTimes">
+                    <select name="hours" id="hours"></select>
+                    <select name="mintues" id="minutes"></select>
+                    <select name="seconds" id="seconds"></select>
+                    <select name="ampm" id="ampm">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+                <div class="buttonContainer">
+                    <button id="startstop" class="cta cta1">Set Alarm</button>
+                    <button id="snooze" class="hide cta cta2">Snooze</button>
                 </div>
             </div>
+            <div class="quoteCard quotes">
+              <div class="quoteContainer">
+                <span id="quote"></span>
+              </div>
+              <div class="authorContainer">
+                <p style="display: inline;">-</p>
+                <span id="author"></span>
+              </div>
+            </div>
         </div>
-        <video src="./bgvid2.mp4" muted loop autoplay playsinline></video>
+
+        <video src="./assets/bgvideo.mp4" muted loop autoplay playsinline></video>
         <div class="overlay"></div>
     </main>
 
     <section class="aboutUs" id = "about">
-        <div class="wrapper">
-
+        <div class="wrapper wrapperBody">
             <article class="purpose">
                 <div class="left">
-                    <h1 class="infoHeadings">The Nice Alarm</h1>
-										
-                    <p>Always start and finish well with THE NICE ALARM. The nice alarm  gives you that boost you need to start your day. Every time to decide to start your day you words or wisdom. Now isn't that wonderful!</p>
-									<a> <img	src=study.jpg width=100% height=auto></a>
+                    <h1 class="infoHeadings">Why should you use WiseAlarm? </h1>
+
+                    <p>Need to complete a task? or study? Then WiseAlarm can assist you. The WiseAlarm allows you to set an alarm for anytime in the day. When you set or stop the alarm, some wisdom and words of motivation are displayed to keep morale as high as possible. Now isn't that wonderful?</p>
                 </div>
-								<br><p>THE NICE ALAM is your best study pal. As you complete each task let The Nice Alarm tell you how spectacular you are.</p>
-						
-						
                 <div class="right">
-                    <img class="shadow" src="./karaoke.jpg" alt="">
+                    <img class="shadow" src="./assets/pic.jpg" alt="person doing a task">
                 </div>
             </article>
+            <article class="price">
+                <div class="left">
+                    <h1><span>$</span>0.00</h1>
+                    <p>/for a lifetime</p>
+                </div>
+                <div class="right">
+                    <h1 class="infoHeadings">How much do I need to pay to use WiseAlarm?</h1>
 
-        </div>
-    </section>
-
-
-    <section class="searchSection" id = "search">
-        <div class="wrapper">
-
-        
-        <form action="" class="searchBar ">
-            <label for="">
-                <h3>Search Lyric</h3>
-            </label>
-            <div class="barContainer">
-                
-                <input type="search" name="" id="" placeholder="Enter a song name or artist name" class="shadow">
-                <!-- <button type="submit">S</button> -->
-                <button>
-                    <img src="./search-normal.svg" alt="">                    
-                </button>
-            </div>
-
-        </form>
-      <article id="searchResult">
-        
-            
-          </article>
+                    <p>WiseAlarm does not require any subscription or login information, we provide our services at no extra cost. Enjoy the benefits of WiseAlarm with your wallet remaining the same size.</p>
+                </div>
+            </article>
         </div>
     </section>
 
@@ -122,6 +111,8 @@
             <p>Pleade let us know.</p>
 
             <form action="https://formsubmit.co/0952d16452e8d2695b99f23adf6f87ad" method="POST" class="contactForm shadow">
+                <input type="hidden" name="_subject" value="SingAlong contact form">
+                <input type="hidden" name="_next" value="https://1601finalproject.netlify.app/return.html">
                 <label for="">Name</label>
                 <input type="text" name="" id="">
 
@@ -140,22 +131,29 @@
 
     <footer>
         <div class="wrapper">
-            <a href="#home" class="footerLogo">Sing Along</a>
+            <a href="#home" class="footerLogo">The WiseAlarm</a>
 
             <ul class="footerMenu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="#search">Search</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-				<div> <a style="color: white;"> <img  src=RTwhite.png width="30" style="vertical-align:middle;"> site by ©RuntimeTerrors </a>
-				</div></div>
+
+        <div class="runTimeTerrors">
+            <img src="./assets/RTwhite.png" alt="runTimeTerrors" srcset="">
+            <span>
+                Website by 	&copy;RunTimeTerrors
+            </span>
+        </div>
+
     </footer>
 
 
 </body>
-<script src="script.js"></script>
-</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
+<script src="./js/app.js"></script>
+<script>
 
+</script>
 </html>

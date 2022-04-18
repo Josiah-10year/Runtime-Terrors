@@ -1,0 +1,723 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Poppins:wght@400;500;600&display=swap');
+
+/* general styles throughout site */
+:root{
+    --primary: #1752fe;
+    --primaryHover: #1540c4;
+}
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.wrapper{
+    max-width: 1300px;
+    padding: 0.2rem 1.5rem;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+}
+
+.infoHeadings{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.aboutUs, .contactUs{
+    margin-top: 5.375rem;
+}
+
+.shadow{
+    box-shadow: 6px 9px 28px 0px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 6px 9px 28px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 6px 9px 28px 0px rgba(0,0,0,0.2);
+}
+
+
+.wrapperBody{
+    max-width: 1250px;
+    margin: 0 auto;
+}
+
+
+/* load screen */
+
+    /* nav bg */
+header{ 
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    transition: backdrop-filter, padding, background 0.5s ease;
+    padding: 0.8rem 0;
+}
+
+
+    /* nav styles*/
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+nav .menu{
+    display: none;
+}
+
+.mobileMenu .wrapper{
+    position: relative;
+
+}
+
+
+.exitBtn {
+    position: absolute;
+    z-index: 1000;
+    top: -0.8rem;
+    right: 1.4rem;
+    cursor: pointer;
+    width: fit-content;
+    opacity: 0;
+    /* transform: translateY(-5px); */
+}
+
+.exitBtn div{
+    display: block;
+    font-size: 60px;
+    color: white;
+}
+
+.mobileMenu{
+    position: fixed;
+    z-index: 999;
+    overflow: hidden;
+    background-color: #1752fe;
+    width: 100%;
+    height: 0%;
+    top: 0;
+    left: 0;
+}
+
+.mobileMenu ul{
+    margin-top: 5rem;
+    list-style: none;
+}
+
+.mobileMenu ul li{
+    opacity: 0;
+}
+
+.mobilenavLinks{
+    font-size: 4.5rem;
+    color: white;
+    transition: color 0.25s ease-in;
+}
+
+.mobilenavLinks:hover{
+    color: lightgrey;
+}
+
+.siteLogo{
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: rgb(255, 255, 255);
+    transition: color 0.25s ease-in;
+}
+
+.siteLogo:hover{
+    color: rgb(204, 200, 200);
+
+}
+
+.burgerMenu{
+    cursor: pointer;
+}
+
+.line{
+    width: 30px;
+    height: 3px;
+    background: white;
+    border-radius: 30px;
+    display: block;
+}
+
+.line2{
+    margin: 0.3rem 0;
+}
+
+    /* video bg */
+
+video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
+    background-image: url("./assets/backupFrame.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -9;
+}
+
+
+/* clock styles */
+
+
+.hide{
+    display: none;
+}
+
+.clockCard{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem 2rem;
+    border-radius: 20px;
+}
+
+
+#clock{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.selectTimes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.selectTimes select{
+    padding: 0.3rem;
+    margin-right: 0.5rem;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255,1);
+    background-color: transparent;
+    color: white;
+    border: 1px solid lightblue;
+    
+}
+.selectTimes option{
+    color: black;
+}
+
+.buttonContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cta{
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.cta1{
+    color: white;
+    background-color: var(--primary);
+    padding: 0.5rem 1rem;
+    transition: background 0.25s ease-in;
+}
+.cta1:hover{
+    background-color: var(--primaryHover);
+}
+
+#snooze{
+    font-size: 1rem;
+    font-weight: 400;
+    border-radius: 15px;
+    outline: none;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    transition: all 0.25s ease-in;
+}
+
+#snooze:hover{
+    background-color: rgb(63, 63, 63);
+}
+
+.quoteCard{
+    background-color: aqua;
+    margin-top: 50px;
+    padding: 1rem;
+    width: 270px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem 2rem;
+    border-radius: 20px;
+    color: white;
+}
+
+.quoteContainer{
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+}
+
+.authorContainer{
+    color: rgb(190, 188, 188);
+    font-size: 16px;
+}
+
+
+
+    /* landing page text */
+main{
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* about us section */
+
+
+    /* purpose */
+
+.purpose{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.purpose h1{
+    width: 90%;
+    margin: auto;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+}
+
+.purpose p{
+    margin-bottom: 2rem;
+}
+
+
+.purpose img{
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    /* price */
+
+.price{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.price .left{
+    order: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    order: 1;
+}
+
+.price .right h1{
+    line-height: 1.2;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1.25rem;
+    margin-top: 5.375rem;
+}
+
+.price .right p{
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+
+.price .left h1{
+    font-size: 6rem;
+    text-align: center;
+}
+.price .left h1 span{
+    color: var(--primary);
+}
+
+.price .left > p{
+    text-align: center;
+    color: #303953;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    margin-top: -35px;
+}
+
+/* contact section */
+.contactUs{
+    margin-bottom: 5.375rem;
+}
+
+.contactUs h1{
+    text-align: center;
+    margin-bottom: 0.7rem;
+    font-size: 1.875rem;
+}
+
+.contactUs p{
+    text-align: center;
+    font-size: 1rem;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    background-color: #F5F2F2;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 1rem;
+    max-width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.contactForm input{
+    padding: 0.7rem 0.5rem 0 0.2rem;
+    border-radius: 5px 5px 0 0;
+}
+
+.contactForm input, .contactForm textarea{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+
+}
+
+.contactForm textarea{
+    resize: none;
+    border-radius: 5px 5px 0 0;
+
+}
+
+.contactForm button{
+    margin-top: 1.25rem;
+}
+
+.contactForm label{
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+.contactForm input{
+    margin-bottom: 1.25rem;
+}
+
+.contactForm button{
+    background-color: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1.125rem;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+.contactForm button:hover{
+    background-color: var(--primaryHover);
+}
+
+input:focus, textarea:focus {
+    background: #dfdcdc;
+  }
+
+
+/* footer */
+
+footer{
+    background: #091c55;
+    padding: 0.5rem 0;
+}
+
+.footerLogo{
+    font-size: 1.25rem;
+    text-align: center;
+    letter-spacing: 1.5px;
+    color: white;
+    text-transform: uppercase;
+    transition: color 0.25s ease-in;
+}
+
+.footerLogo:hover{
+    color: rgb(204, 200, 200);
+
+}
+
+footer .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerMenu{
+    margin-top: 25px;
+    list-style: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+.footerMenu li{
+    margin-bottom: 10px;
+}
+.footerMenu a{
+    color: white;
+    transition: color 0.25s ease-in;
+}
+
+.footerMenu a:hover{
+    color: rgb(204, 200, 200);
+
+}
+
+.runTimeTerrors{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(138, 137, 137);
+    font-size: 12px;
+}
+
+.runTimeTerrors img{
+    width: 30px;
+    
+}
+
+/* RESPONSIVE STYLES */
+
+@media (min-width: 500px){
+    .quoteContainer{
+        font-size: 20px;
+    }
+
+    .price .left h1{
+        font-size: 6.8rem;
+        text-align: center;
+    }
+
+    #clock{
+        font-size: 3rem;
+    }
+    .clockCard, .quoteCard{
+        width: 380px;
+    }
+
+    .buttonContainer{
+        flex-direction: row;
+    }
+    #snooze{
+        margin-top: 0;
+        margin-left: 0.5rem;
+    }
+}
+
+@media (min-width: 768px){
+    .quoteContainer{
+        font-size: 22px;
+    }
+    .clockCard, .quoteCard{
+        width: 500px;
+    }
+
+    #clock{
+        font-size: 4rem;
+    }
+
+
+    .mobileMenu{
+        display: none;
+    }
+
+    .burgerMenu{
+        display: none;
+    }
+
+    nav .menu{
+        display: flex;
+        list-style: none;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+
+    .menu a{
+        color: white;
+        transition: color 0.25s ease-in;
+    }
+
+    .menu a:hover{
+        color: rgb(204, 200, 200);
+
+    }
+
+
+    .menu li{
+        margin-right: 20px;
+    }
+
+    .menu li:nth-child(3){
+        margin-right: 0px;
+    }
+
+    .purpose{
+        flex-direction: row;
+        text-align: left;
+    }
+    .purpose .left{
+        flex: 1;
+
+    }
+    .purpose .right{
+        flex: 1;
+        margin-left: 50px;
+    }
+
+    .purpose h1{
+        width: 100%;
+    }
+
+    .price{
+        flex-direction: row;
+        text-align: left;
+        margin-top: 4rem;
+
+    }
+    .price .left{
+        order: 1;
+        flex: 1;
+
+    }
+    .price .right{
+        order: 2;
+        text-align: left;
+        flex: 1;
+        margin-left: 50px;
+
+    }
+
+    .price .right h1{
+        margin-top: 0;
+        text-align: left;
+        width: 100%;
+
+    }
+    .price .right p{
+        text-align: left;
+
+    }
+
+    footer .wrapper{
+        flex-direction: row;
+    }
+    .footerMenu{
+        display: flex;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .footerMenu li{
+        margin-bottom: 0;
+        margin-left: 15px;
+    }
+
+    
+}
+
+@media (min-width: 900px){
+    .quoteContainer{
+        font-size: 24px;
+    }
+    .authorContainer{
+        font-size: 18px;
+    }
+    .clockCard, .quoteCard{
+        width: 600px;
+    }
+
+    #clock{
+        font-size: 5rem;
+    }
+
+    .purpose .right{
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-left: 100px;
+    }
+
+    .purpose img{
+        width: 100%;
+        max-width: initial;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1024px){
+
+    .purpose img{
+        margin-left: -25px;
+    }
+
+    
+    .clockCard, .quoteCard{
+        width: 650px;
+    }
+
+    #clock{
+        font-size: 6rem;
+    }
+
+
+    .price{
+        margin-top: 8rem;
+
+    }
+}
